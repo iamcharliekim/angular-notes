@@ -1,0 +1,20 @@
+<div class="form-container">
+    <form [formGroup]="addForm" (ngSubmit)="addNoteSubmit()">
+        <div class="name-wrapper">
+            <label for="name">Name:</label>
+            <input type="text" formControlName="name" id="name" [class.is-invalid]="addForm.get('name').invalid && addForm.get('name').touched">
+            <small *ngIf="addForm.get('name').invalid && addForm.get('name').touched">A name for your note is required</small>
+        </div>
+
+        <div class="body-wrapper">
+            <label for="body">Body:</label>
+            <textarea name="" id="body" cols="30" rows="10" formControlName="body"></textarea>
+        </div>
+
+        <div class="btns-wrapper">
+            <button class="submit" type="submit" [disabled]="addForm.get('name').errors">Save</button>
+            <a routerLink="/"><button class="cancel">Cancel</button></a>
+        </div>
+
+    </form>
+</div>

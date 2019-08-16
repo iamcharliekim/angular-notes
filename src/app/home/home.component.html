@@ -1,0 +1,8 @@
+<div class="notes-container">
+    <div class="note" *ngFor="let note of notes" (click)="onSelect(note.id)">
+        <h1>{{note.name}}</h1>
+        <span>{{note.body}}</span>
+    </div>
+</div>
+
+<h1>{{notes.name}}</h1>
